@@ -1,17 +1,29 @@
-module.exports = function(sequelize, Datatypes) {
-  const watchListItem = sequelize.define("WatchListItem", {
+module.exports = function(sequelize, DataTypes) {
+  const WatchListItem = sequelize.define("WatchListItem", {
     api_id: {
-      type: Datatypes.STRING,
-      allowNull: false
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
     },
-    isWatched: {
+    is_watched: {
       type: Datatypes.BOOLEAN,
       allowNull: false,
       default: false
     },
-    foreignKey: {
-      allowNull: false
-    }
   });
-  return watchListItem;
+
+  WatchListItem.associate = function(models) {
+    // We're saying that a WatchListItem should belong to an User
+    // A WatchListItem can't be created without an User due to the foreign key constraint
+    WatchListItem.belongsTo(models.User, {
+      onDelete: "CASCADE",
+      foreignKey: {
+        allowNull: false
+      }
+    });
+  };
+
+  return WatchListItem;
 };
