@@ -1,0 +1,29 @@
+<nav>
+    <div class="nav-wrapper">
+        <img class="logo-img" src="" alt="orange with chips sun" style="display: none;">
+        <a class="brand-logo black-text text-darken-2">QuaranScreen</a>
+        <a href="#" class="sidenav-trigger right black-text text-darken-2" data-target="mobile-links">
+    </div>
+</nav>
+<div class="container">
+    <div class="row">
+        <div class="col s6">
+            <h1>My Watch List</h1>
+            <ul>
+                {{#each watchListItem}}
+                {{#unless ifWatched}}
+                {{/unless}}
+                {{/each}}
+            </ul>
+        </div>
+        <div class="col s6">
+            <h1>Already Watch List</h1>
+            <ul>
+                {{#each watchListItem}}
+                {{#if ifWatched}}
+                {{/if}}
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+</div>
