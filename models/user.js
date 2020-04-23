@@ -16,11 +16,11 @@ module.exports = function(sequelize, DataTypes) {
     password: {
       type: DataTypes.STRING,
       allowNull: false
-    },
+    }
   });
 
   User.associate = function(models) {
-    models.User.hasMany(models.WatchListItem,  {
+    models.User.hasMany(models.WatchListItem, {
       onDelete: "CASCADE",
       foreignKey: {
         allowNull: false

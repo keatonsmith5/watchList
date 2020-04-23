@@ -11,7 +11,7 @@ module.exports = function(sequelize, DataTypes) {
       type: Datatypes.BOOLEAN,
       allowNull: false,
       default: false
-    },
+    }
   });
 
   WatchListItem.associate = function(models) {
