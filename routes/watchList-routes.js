@@ -7,24 +7,6 @@ module.exports = app => {
     });
   });
 
-  app.get("/search", (req, res) => {
-    if (!req.user) {
-      // The user is not logged in, redirect to signup
-      res.redirect("/signup");
-    } else {
-      res.sendFile(path.join(__dirname, "../public/placeholder.html"));
-    }
-  });
-
-  app.get("/movielist", (req, res) => {
-    if (!req.user) {
-      // The user is not logged in, redirect to signup
-      res.redirect("/signup");
-    } else {
-      res.sendFile(path.join(__dirname, "../public/placeholder.html"));
-    }
-  });
-
   app.post("/api/watchlistitem", (req, res) => {
     // {
     //     "title": "the matrix",
@@ -33,10 +15,27 @@ module.exports = app => {
     //     "is_watched": false
     //  }
     db.WatchListItem.create({
-      UserId: 1, // todo: req.user here
+      UserId: req.body.user, // todo: req.user here
       title: req.body.title,
       api_id: req.body.api_id,
       is_watched: req.body.is_watched
+    }).then(dbWatch => {
+      res.json(dbWatch);
+    });
+  });
+
+  app.get("/api/watchlistitem", (req, res) => {
+    if (!req.user) {
+      // The user is not logged in, redirect to signup
+      res.sendStatus(403);
+    }
+    // Here we add an "include" property to our options in our findAll query
+    // We set the value to an array of the models we want to include in a left outer join
+    // In this case, just db.Post
+    db.WatchListItem.findAll({
+      where: {
+        UserId: req.user.id
+      }
     }).then(dbWatch => {
       res.json(dbWatch);
     });
