@@ -1,5 +1,12 @@
 module.exports = function(sequelize, DataTypes) {
   const WatchListItem = sequelize.define("WatchListItem", {
+    title: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
+    },
     api_id: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -8,7 +15,7 @@ module.exports = function(sequelize, DataTypes) {
       }
     },
     is_watched: {
-      type: Datatypes.BOOLEAN,
+      type: DataTypes.BOOLEAN,
       allowNull: false,
       default: false
     }
