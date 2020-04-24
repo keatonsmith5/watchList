@@ -29,7 +29,14 @@ module.exports = function(app) {
 
   //route to handle switching from search movies to my movielist.
   app.get("/movielist", isAuthenticated, (req, res) => {
-    res.sendFile(path.join(__dirname, "../public/movielist.html"));
+    db.WatchListItem.findAll({
+      where: {
+        UserId: req.user.id
+      }
+    }).then(dbWatch => {
+      res.json(dbWatch); // res.render("movielist", {movies: dbWatch});
+      res.sendFile(path.join(__dirname, "../public/movielist.html"));
+    });
   });
 
   //route to search from my movies
