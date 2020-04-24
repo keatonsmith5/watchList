@@ -26,9 +26,14 @@ module.exports = app => {
   });
 
   app.post("/api/watchlistitem", (req, res) => {
-    // req.body: title, api_id, is_watched
+    // {
+    //     "title": "the matrix",
+    //     "api_id": "1",
+    //      Is_watched should be true for the "watched list"
+    //     "is_watched": false
+    //  }
     db.WatchListItem.create({
-      UserId: 1, // todo: req.user here3
+      UserId: 1, // todo: req.user here
       title: req.body.title,
       api_id: req.body.api_id,
       is_watched: req.body.is_watched
@@ -36,13 +41,17 @@ module.exports = app => {
       res.json(dbWatch);
     });
   });
+
   app.patch("/api/watchlistitem/:id", (req, res) => {
     // req.body: title, api_id, is_watched
-    db.WatchListItem.update(req.body.is_watched, {
-      where: {
-        id: req.param.id
+    db.WatchListItem.update(
+      { is_watched: true },
+      {
+        where: {
+          api_id: req.params.id
+        }
       }
-    }).then(dbWatch => {
+    ).then(dbWatch => {
       res.json(dbWatch);
     });
   });
