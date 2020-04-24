@@ -26,4 +26,14 @@ module.exports = function(app) {
   app.get("/members", isAuthenticated, function(req, res) {
     res.sendFile(path.join(__dirname, "../public/members.html"));
   });
+
+  //route to handle switching from search movies to my movielist.
+  app.get("/movielist", isAuthenticated, (req, res) => {
+    res.sendFile(path.join(__dirname, "../public/movielist.html"));
+  });
+
+  //route to search from my movies
+  app.get("/search", isAuthenticated, (req, res) => {
+    res.sendFile(path.join(__dirname, "../public/search.html"));
+  });
 };
