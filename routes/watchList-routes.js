@@ -28,11 +28,17 @@ module.exports = app => {
   app.post("/api/watchlistitem", (req, res) => {
     // req.body: title, api_id, is_watched
     db.WatchListItem.create({
-      UserId: 1, // todo: req.user here
+      UserId: 1, // todo: req.user here3
       title: req.body.title,
       api_id: req.body.api_id,
       is_watched: req.body.is_watched
     }).then(dbWatch => {
+      res.json(dbWatch);
+    });
+  });
+  app.patch("/api/watchlistitem/:id", (req, res) => {
+    // req.body: title, api_id, is_watched
+    db.WatchListItem.update(req.params.id).then(dbWatch => {
       res.json(dbWatch);
     });
   });
