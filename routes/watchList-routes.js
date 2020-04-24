@@ -38,7 +38,13 @@ module.exports = app => {
   });
   app.patch("/api/watchlistitem/:id", (req, res) => {
     // req.body: title, api_id, is_watched
-    db.WatchListItem.update(req.params.id).then(dbWatch => {
+    db.WatchListItem.update(
+      req.body.is_watched,
+      {
+      where: {
+        id: req.param.id
+      }
+    }).then(dbWatch => {
       res.json(dbWatch);
     });
   });
