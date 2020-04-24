@@ -33,7 +33,7 @@ module.exports = app => {
     //     "is_watched": false
     //  }
     db.WatchListItem.create({
-      UserId: req.UserId, // todo: req.user here
+      UserId: 1, // todo: req.user here
       title: req.body.title,
       api_id: req.body.api_id,
       is_watched: req.body.is_watched
@@ -44,11 +44,14 @@ module.exports = app => {
 
   app.patch("/api/watchlistitem/:id", (req, res) => {
     // req.body: title, api_id, is_watched
-    db.WatchListItem.update(req.body.is_watched, {
-      where: {
-        id: req.param.id
+    db.WatchListItem.update(
+      { is_watched: true },
+      {
+        where: {
+          api_id: req.params.id
+        }
       }
-    }).then(dbWatch => {
+    ).then(dbWatch => {
       res.json(dbWatch);
     });
   });
