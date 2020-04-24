@@ -1,0 +1,33 @@
+<!-- Dropdown Structure -->
+<ul id="dropdown1" class="dropdown-content">
+    <li><a href="#!">My Movie List</a></li>
+    <li><a href="#!">Logout</a></li>
+
+</ul>
+<nav>
+    <div class="nav-wrapper">
+        <a href="#!" class="brand-logo">QuaranScreen</a>
+        <ul class="right">
+
+            <!-- Dropdown Trigger -->
+            <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Options</a></li>
+        </ul>
+    </div>
+</nav>
+<div class="container">
+    <form id="movie-form">
+        <h3 for="movie-input">Search Movies</h3>
+        <input type="text" id="movie-input" />
+        <br />
+
+        <!-- Button triggers new movie to be added -->
+        <input id="add-movie" type="submit" value="Search Movie" />
+    </form>
+    <br>
+    <div id="search-results">
+
+    </div>
+
+    <div id="buttons-view"></div>
+
+</div>
