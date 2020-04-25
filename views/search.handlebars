@@ -78,8 +78,8 @@
             if ($(this).attr("disabled")) {
               return;
             }
-            console.log(userID)
-            alert("hi");
+            
+           
             const unwatchedMovie = {
               UserId: userID,
               title: response.Title,
@@ -91,7 +91,7 @@
               type: "POST",
               data: unwatchedMovie
             }).then(() => {
-              alert("Disabling");
+             
               $(this).attr("disabled", true);
               console.log(this);
             });
