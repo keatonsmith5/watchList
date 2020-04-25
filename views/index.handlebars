@@ -21,8 +21,8 @@
             <div id="my-watchlist">
                 <ul>
                     {{#each watchListItem}}
-                    {{#if isWatched}}
-                    {{> movielist/movielist-block isWatched=false}}
+                    {{#if is_watched}}
+                    {{> movielist/movielist-block is_watched=false}}
                     {{/if}}
                     {{/each}}
                 </ul>
@@ -35,8 +35,8 @@
                 <ul>
 
                     {{#each watchListItem}}
-                    {{#unless isWatched}}
-                    {{> movielist/movielist-block isWatched=true}}
+                    {{#unless is_watched}}
+                    {{> movielist/movielist-block is_watched=true}}
                     {{/unless}}
                     {{/each}}
                 </ul>

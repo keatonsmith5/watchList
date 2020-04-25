@@ -44,6 +44,7 @@ $(document).ready(function() {
         }
         alert("hi");
         const unwatchedMovie = {
+          UserId: UserId,
           title: response.Title,
           is_watched: false,
           api_id: response.imdbID
