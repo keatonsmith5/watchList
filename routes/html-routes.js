@@ -34,8 +34,9 @@ module.exports = function(app) {
         UserId: req.user.id
       }
     }).then(dbWatch => {
-      res.json(dbWatch); // res.render("movielist", {movies: dbWatch});
-      res.sendFile(path.join(__dirname, "../public/movielist.html"));
+      // res.sendFile(path.join(__dirname, "../public/movielist.html"));
+      // res.json(dbWatch);
+      res.render("index", { movies: dbWatch });
     });
   });
 

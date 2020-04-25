@@ -15,7 +15,7 @@ module.exports = app => {
     //     "is_watched": false
     //  }
     db.WatchListItem.create({
-      UserId: req.body.user, // todo: req.user here
+      UserId: req.user, // todo: req.user here
       title: req.body.title,
       api_id: req.body.api_id,
       is_watched: req.body.is_watched
