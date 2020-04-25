@@ -20,54 +20,59 @@
             <h3>My WatchList</h3>
             <div id="my-watchlist">
                 <ul>
-                    {{#each movies}}
-                    {{#if is_watched}}
-                    {{> movielist/movielist-block is_watched=false}}
-                    {{/if}}
+
+                    {{#each userMovieList}}
+                    {{#unless this.is_watched}}
+                    <pre> {{this.movietitle}}
+					</pre>
+
+                    {{/unless}}
                     {{/each}}
                 </ul>
-                
+
             </div>
         </div>
         <div class="col s12 xl6">
             <h3>Already Watched</h3>
             <div id="already-watched">
                 <ul>
-
-                    {{#each movies}}
-                    {{#unless is_watched}}
-                    {{!-- {{> movielist/movielist-block is_watched=true}} --}}
-                    {{/unless}}
+                    {{#each userMovieList}}
+                    {{#if is_watched}}
+                 
+                    <pre> {{this.movietitle}}
+					</pre> 
+                    {{/if}}
                     {{/each}}
                 </ul>
+
             </div>
         </div>
     </div>
 </div>
 <script>
-    $(document).ready(function() {
-  $(".dropdown-trigger").dropdown({
-    coverTrigger: false
-  });
-});
-$(() => {
-  $(".change-isWatched").on("click", function() {
-    const id = $(this).data("id");
-    const newisWatched = $(this).data("newisWatched");
-
-    const newisWatchedState = { value: newisWatched };
-
-    $.ajax(`/api/watchlistitem/${id}/is_watched`, {
-      type: "PUT",
-
-      data: JSON.stringify(newisWatchedState),
-
-      contentType: "application/json; charset=UTF-8"
-    }).then(() => {
-      location.reload();
+    $(document).ready(function () {
+        $(".dropdown-trigger").dropdown({
+            coverTrigger: false
+        });
     });
-  });
-});
+    $(() => {
+        $(".change-isWatched").on("click", function () {
+            const id = $(this).data("id");
+            const newisWatched = $(this).data("newisWatched");
+
+            const newisWatchedState = { value: newisWatched };
+
+            $.ajax(`/api/watchlistitem/${id}/is_watched`, {
+                type: "PUT",
+
+                data: JSON.stringify(newisWatchedState),
+
+                contentType: "application/json; charset=UTF-8"
+            }).then(() => {
+                location.reload();
+            });
+        });
+    });
 
 </script>
 

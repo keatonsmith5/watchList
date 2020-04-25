@@ -1,7 +1,7 @@
 <li>
-	{{title}}
+	{{movietitle}}
 
-	<button class="change-isWatched btn btn-success"  type= "button" data-id="{{id}}" data-newisWatched="{{isWatched}}">
-		{{#if is_watched=false}}Already Watched{{/if}}
+	<button class="change-isWatched btn btn-success"  type= "button" data-id="{{id}}" data-newisWatched="{{is_watched}}">
+		{{#unless is_watched}}Already Watched{{/unless}}
 	</button>
 </li>
