@@ -34,9 +34,18 @@ module.exports = function(app) {
         UserId: req.user.id
       }
     }).then(dbWatch => {
+      const userMovieList = dbWatch.map(list => {
+        return {
+          id: list.dataValues.id,
+          movietitle: list.dataValues.title,
+          is_watched: list.dataValues.is_watched,
+          UserId: list.dataValues.UserId
+        };
+      });
+      console.log(userMovieList);
       // res.sendFile(path.join(__dirname, "../public/movielist.html"));
-      // res.json(dbWatch);
-      res.render("index", { movies: dbWatch });
+      // res.json(userMovieList);
+      res.render("index", { userMovieList });
     });
   });
 
