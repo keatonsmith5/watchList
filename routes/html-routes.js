@@ -42,6 +42,7 @@ module.exports = function(app) {
 
   //route to search from my movies
   app.get("/search", isAuthenticated, (req, res) => {
-    res.sendFile(path.join(__dirname, "../public/search.html"));
+    // res.sendFile(path.join(__dirname, "../public/search.html"));
+    res.render("search");
   });
 };
