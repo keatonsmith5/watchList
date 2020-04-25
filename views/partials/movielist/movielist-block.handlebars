@@ -1,7 +1,7 @@
 <li>
-	{{name}}
+	{{title}}
 
 	<button class="change-isWatched btn btn-success"  type= "button" data-id="{{id}}" data-newisWatched="{{isWatched}}">
-		{{#if !isWatched}}Already Watched{{/if}}
+		{{#if is_watched=false}}Already Watched{{/if}}
 	</button>
 </li>

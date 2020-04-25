@@ -34,13 +34,15 @@ module.exports = function(app) {
         UserId: req.user.id
       }
     }).then(dbWatch => {
-      res.json(dbWatch); // res.render("movielist", {movies: dbWatch});
-      res.sendFile(path.join(__dirname, "../public/movielist.html"));
+      // res.sendFile(path.join(__dirname, "../public/movielist.html"));
+      // res.json(dbWatch);
+      res.render("index", { movies: dbWatch });
     });
   });
 
   //route to search from my movies
   app.get("/search", isAuthenticated, (req, res) => {
-    res.sendFile(path.join(__dirname, "../public/search.html"));
+    // res.sendFile(path.join(__dirname, "../public/search.html"));
+    res.render("search");
   });
 };

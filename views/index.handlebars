@@ -1,7 +1,7 @@
 <!-- Dropdown Structure -->
 <ul id="dropdown1" class="dropdown-content">
-    <li><a href="#!">Search Movies</a></li>
-    <li><a href="#!">Logout</a></li>
+    <li><a href="/search">Search Movies</a></li>
+    <li><a href="/logout">Logout</a></li>
 
 </ul>
 <nav>
@@ -20,7 +20,7 @@
             <h3>My WatchList</h3>
             <div id="my-watchlist">
                 <ul>
-                    {{#each watchListItem}}
+                    {{#each movies}}
                     {{#if is_watched}}
                     {{> movielist/movielist-block is_watched=false}}
                     {{/if}}
@@ -34,9 +34,9 @@
             <div id="already-watched">
                 <ul>
 
-                    {{#each watchListItem}}
+                    {{#each movies}}
                     {{#unless is_watched}}
-                    {{> movielist/movielist-block is_watched=true}}
+                    {{!-- {{> movielist/movielist-block is_watched=true}} --}}
                     {{/unless}}
                     {{/each}}
                 </ul>
@@ -44,9 +44,34 @@
         </div>
     </div>
 </div>
+<script>
+    $(document).ready(function() {
+  $(".dropdown-trigger").dropdown({
+    coverTrigger: false
+  });
+});
+$(() => {
+  $(".change-isWatched").on("click", function() {
+    const id = $(this).data("id");
+    const newisWatched = $(this).data("newisWatched");
 
+    const newisWatchedState = { value: newisWatched };
+
+    $.ajax(`/api/watchlistitem/${id}/is_watched`, {
+      type: "PUT",
+
+      data: JSON.stringify(newisWatchedState),
+
+      contentType: "application/json; charset=UTF-8"
+    }).then(() => {
+      location.reload();
+    });
+  });
+});
+
+</script>
 
 <!-- Compiled and minified JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <!--External JS-->
-<script src="public\js\movielist.js"></script>
+<script src="public/js/movielist.js"></script>
