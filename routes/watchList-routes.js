@@ -54,4 +54,14 @@ module.exports = app => {
       res.json(dbWatch);
     });
   });
+
+  app.delete("/api/watchlistitem/:id", (req, res) => {
+    db.Post.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then(dbWatch => {
+      res.json(dbWatch);
+    });
+  });
 };
