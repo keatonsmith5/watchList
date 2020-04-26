@@ -1,0 +1,18 @@
+body{
+    background-color: lightgray;
+}
+.btn {
+    margin: 10px;
+}
+.container {
+    width: 60%;
+}
+#movie-input {
+    background-color: ghostwhite;
+}
+#add-movie {
+    color: ghostwhite;
+}
+#movie-title{
+    font-weight: bolder;
+}
