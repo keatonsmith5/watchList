@@ -39,10 +39,11 @@ module.exports = function(app) {
           id: list.dataValues.id,
           movietitle: list.dataValues.title,
           is_watched: list.dataValues.is_watched,
-          UserId: list.dataValues.UserId
+          UserId: list.dataValues.UserId,
+          api_id: list.dataValues.api_id
         };
       });
-      console.log(userMovieList);
+      // console.log(userMovieList);
       // res.sendFile(path.join(__dirname, "../public/movielist.html"));
       // res.json(userMovieList);
       res.render("index", { userMovieList });

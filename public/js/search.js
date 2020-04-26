@@ -1,5 +1,3 @@
-// import { response } from "express";
-
 $(document).ready(function() {
   $(".dropdown-trigger").dropdown({
     coverTrigger: false
@@ -38,12 +36,17 @@ $(document).ready(function() {
       watchedButton.addClass("waves-effect waves-light btn watched");
       movieDiv.append(watchedButton);
       // Putting the entire movie above the previous movies
+      userID = "";
+      $.get("/api/user_data").then(function(data) {
+        userID = data.id;
+      });
       $(document).on("click", ".unwatched", () => {
         if ($(this).attr("disabled")) {
           return;
         }
-        alert("hi");
+
         const unwatchedMovie = {
+          UserId: userID,
           title: response.Title,
           is_watched: false,
           api_id: response.imdbID
@@ -53,7 +56,6 @@ $(document).ready(function() {
           type: "POST",
           data: unwatchedMovie
         }).then(() => {
-          alert("Disabling");
           $(this).attr("disabled", true);
           console.log(this);
         });
@@ -63,6 +65,7 @@ $(document).ready(function() {
         event.preventDefault();
 
         const watchedMovie = {
+          UserId: userID,
           title: response.Title,
           is_watched: true,
           api_id: response.imdbID
