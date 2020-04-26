@@ -1,0 +1,30 @@
+body {
+    background-color: lightgray;
+}
+.container {
+    margin: 0 auto;
+}
+#welcome {
+    
+    text-align: center;
+    font-weight: bolder;
+    margin: 0 auto;
+}
+#intro {
+    font-size: x-large;
+    width:80%;
+    text-align: center;
+    margin: 0 auto;
+}
+#start {
+    text-align: center;
+    font-weight: bolder;
+    margin: 0 auto 50px auto;
+}
+#search, #list {
+    margin: 0 auto;
+    text-align: center;
+}
+/* .links-wrapper {
+    width:30%;
+} */

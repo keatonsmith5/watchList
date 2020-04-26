@@ -5,3 +5,8 @@ $(document).ready(function() {
     $(".member-name").text(data.email);
   });
 });
+$(document).ready(function() {
+  $(".dropdown-trigger").dropdown({
+    coverTrigger: false
+  });
+});
