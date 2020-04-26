@@ -46,13 +46,16 @@ module.exports = function(app) {
       // console.log(userMovieList);
       // res.sendFile(path.join(__dirname, "../public/movielist.html"));
       // res.json(userMovieList);
-      res.render("index", { userMovieList });
+      res.render("index", {
+        style: "stylesheets/movielist.css",
+        userMovieList
+      });
     });
   });
 
   //route to search from my movies
   app.get("/search", isAuthenticated, (req, res) => {
     // res.sendFile(path.join(__dirname, "../public/search.html"));
-    res.render("search");
+    res.render("search", { style: "stylesheets/search.css" });
   });
 };

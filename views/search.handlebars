@@ -1,42 +1,50 @@
 <!-- Dropdown Structure -->
 <ul id="dropdown1" class="dropdown-content">
   <li><a href="/members">Home</a></li>
-  <li><a href="/search">My Movie List</a></li>
+  <li><a href="/movielist">My Movie List</a></li>
   <li><a href="/logout">Logout</a></li>
 
 </ul>
 <nav>
   <div class="nav-wrapper">
     <a href="#!" class="brand-logo">QuaranScreen</a>
-    <ul class="right">
+    <div class="links-wrapper">
 
-      <!-- Dropdown Trigger -->
-      <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Options</a></li>
-    </ul>
+      <ul class="right">
+
+        <!-- Dropdown Trigger -->
+        <li><a class="dropdown-trigger" href="#!" data-target="dropdown1"><i class="fa fa-bars fa-6"
+              aria-hidden="true"></i></a></li>
+      </ul>
+    </div>
   </div>
 </nav>
 <div class="container">
-  <form id="movie-form">
-    <h3 for="movie-input">Search Movies</h3>
-    <input type="text" id="movie-input" />
-    <br />
+  <div class="row">
+    <div class="col xl12">
 
-    <!-- Button triggers new movie to be added -->
-    <input id="add-movie" type="submit" value="Search Movie" />
-  </form>
+      <form id="movie-form">
+        <h3 for="movie-input">Search Movies</h3>
+        <input type="text" id="movie-input" />
+        <br />
+
+        <!-- Button triggers new movie to be added -->
+        <input class="waves-effect waves-light btn" id="add-movie" type="submit" value="Search Movie" />
+      </form>
+    </div>
+  </div>
   <br>
   <div id="search-results">
 
+
   </div>
 
-  <div id="buttons-view"></div>
-
-</div>
+  
 <div id="modal1" class="modal">
-    <div class="modal-content">
-      
-    </div>
+  <div class="modal-content">
+
   </div>
+</div>
 <!-- Compiled and minified JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <!--External JS-->
