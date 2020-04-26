@@ -4,18 +4,26 @@ $(document).ready(function() {
   });
 });
 $(document).ready(function() {
+  $(".modal").modal();
+});
+
+$(document).ready(function() {
   let movies = [];
+  const modalContent = $(".modal-content");
+  const movieDiv = $("<div class='movie' class='row'>");
   function displayMovieInfo() {
     const movie = $(this).attr("data-name");
     const queryURL = "https://www.omdbapi.com/?t=" + movie + "&apikey=87765921";
     // Creating an AJAX call for the specific movie button being clicked
+    modalContent.empty();
+    movieDiv.empty();
+
     $.ajax({
       url: queryURL,
       method: "GET"
     }).then(function(response) {
       console.log(response);
       // Creating a div to hold the movie
-      const movieDiv = $("<div class='movie' class='row'>");
       // Retrieving the URL for the image
       const imgURL = response.Poster;
       // Creating an element to hold the image
@@ -35,6 +43,18 @@ $(document).ready(function() {
       const watchedButton = $("<button>").text("Already Watched");
       watchedButton.addClass("waves-effect waves-light btn watched");
       movieDiv.append(watchedButton);
+      const detailsButton = $("<button>").text("View Details");
+      detailsButton.addClass(
+        "waves-effect waves-light btn modal-trigger modal-close"
+      );
+      detailsButton.attr("href", "#modal1");
+      movieDiv.append(detailsButton);
+      const detailsView = `<h2>${response.Title}</h2>
+      Year:${response.Year}
+      <p>${response.Genre}</p>
+      <br>
+      <p>${response.Plot}`;
+      modalContent.append(detailsView);
       // Putting the entire movie above the previous movies
       userID = "";
       $.get("/api/user_data").then(function(data) {
