@@ -25,6 +25,10 @@
                     {{#unless this.is_watched}}
                     <pre> {{this.movietitle}}
 					</pre>
+                    <button class="change-isWatched waves-effect waves-light btn" type="button" data-id="{{api_id}}"
+                        data-newiswatched="{{is_watched}}">
+                        Already Watched
+                    </button>
 
                     {{/unless}}
                     {{/each}}
@@ -38,9 +42,9 @@
                 <ul>
                     {{#each userMovieList}}
                     {{#if is_watched}}
-                 
+
                     <pre> {{this.movietitle}}
-					</pre> 
+					</pre>
                     {{/if}}
                     {{/each}}
                 </ul>
@@ -49,34 +53,9 @@
         </div>
     </div>
 </div>
-<script>
-    $(document).ready(function () {
-        $(".dropdown-trigger").dropdown({
-            coverTrigger: false
-        });
-    });
-    $(() => {
-        $(".change-isWatched").on("click", function () {
-            const id = $(this).data("id");
-            const newisWatched = $(this).data("newisWatched");
 
-            const newisWatchedState = { value: newisWatched };
-
-            $.ajax(`/api/watchlistitem/${id}/is_watched`, {
-                type: "PUT",
-
-                data: JSON.stringify(newisWatchedState),
-
-                contentType: "application/json; charset=UTF-8"
-            }).then(() => {
-                location.reload();
-            });
-        });
-    });
-
-</script>
 
 <!-- Compiled and minified JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <!--External JS-->
-<script src="public/js/movielist.js"></script>
+<script src="/js/movielist.js"></script>

@@ -41,13 +41,13 @@ module.exports = app => {
     });
   });
 
-  app.patch("/api/watchlistitem/:id", (req, res) => {
+  app.put("/api/watchlistitem/", (req, res) => {
     // req.body: title, api_id, is_watched
     db.WatchListItem.update(
       { is_watched: true },
       {
         where: {
-          api_id: req.params.id
+          api_id: req.body.api_id
         }
       }
     ).then(dbWatch => {
