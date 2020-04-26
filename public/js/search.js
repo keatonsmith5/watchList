@@ -86,7 +86,6 @@ $(document).ready(function() {
           type: "POST",
           data: watchedMovie
         }).then(() => {
-          alert("Disabling");
           $(this).attr("disabled", true);
           console.log(this);
         });

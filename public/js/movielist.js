@@ -5,7 +5,6 @@ $(document).ready(function() {
 });
 $(() => {
   $(".change-isWatched").on("click", function() {
-    alert("click works");
     const id = $(this).data("id");
     const newisWatched = $(this).data("newisWatched");
 
@@ -20,5 +19,15 @@ $(() => {
     }).then(() => {
       location.reload();
     });
+  });
+});
+$(".delete").on("click", function() {
+  console.log($(this).data("id"));
+  $.ajax({
+    method: "DELETE",
+    url: "/api/watchlistitem/",
+    data: { api_id: $(this).data("id") }
+  }).then(function() {
+    location.reload();
   });
 });
