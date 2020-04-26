@@ -2,3 +2,15 @@ form.signup,
 form.login {
   margin-top: 50px;
 }
+
+body {
+  background-color: gainsboro;
+}
+.container {
+  font-size: medium;
+  font-weight: bold;
+  color: black;
+}
+.gray-form {
+  background-color: #fffdd0;
+}

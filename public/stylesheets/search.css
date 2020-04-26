@@ -16,3 +16,6 @@ body{
 #movie-title{
     font-weight: bolder;
 }
+#searched-movie {
+    background-color: #fffdd0;
+}
