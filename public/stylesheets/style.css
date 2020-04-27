@@ -1,11 +1,11 @@
 form.signup,
 form.login {
   margin-top: 50px;
+  
 }
 
 body {
-  background-image: url("../images/movie-background-2.jpg");
-  background-color: gainsboro;
+  background-color: #3e424b;
 }
 .container {
   font-size: medium;
@@ -15,5 +15,10 @@ body {
 }
 h2 {
   color: white;
+}
+.row {
+  border-style: solid;
+    border-color: gold;
+ 
 }
 

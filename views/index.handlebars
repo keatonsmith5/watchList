@@ -6,7 +6,7 @@
 
 </ul>
 <nav>
-    <div class="nav-wrapper grey darken-2">
+    <div class="nav-wrapper indigo accent-2">
         <a href="#!" class="brand-logo">QuaranScreen</a>
         <div class="links-wrapper">
 
@@ -22,7 +22,7 @@
 <div class="container">
     <div class="row">
         <div class="col s12 xl6">
-            <h3 class = "title">My WatchList</h3>
+            <h3 class="title">My WatchList</h3>
             <div id="my-watchlist">
                 <ul>
 
@@ -38,14 +38,14 @@
                             </div>
                             <div class="col s8">
 
-                                <button class="change-isWatched waves-effect waves-light btn btn-small" type="button"
-                                    data-id="{{api_id}}" data-newiswatched="{{is_watched}}">
+                                <button class="change-isWatched indigo accent-2 waves-effect waves-light btn btn-small"
+                                    type="button" data-id="{{api_id}}" data-newiswatched="{{is_watched}}">
                                     Already Watched
                                 </button>
 
 
-                                <button class="delete red accent-3 waves-effect waves-light btn btn-small" type="button"
-                                    data-id="{{api_id}}">
+                                <button class="delete pink accent-3 waves-effect waves-light btn btn-small"
+                                    type="button" data-id="{{api_id}}">
                                     Delete
                                 </button>
                             </div>
@@ -65,13 +65,22 @@
                 <ul>
                     {{#each userMovieList}}
                     {{#if is_watched}}
-                    <div class="user-movie">
+                    <div class="row" class="user-movie">
+                        <div class="col s4">
 
-                        <pre> {{this.movietitle}}
-                </div>
+                            <pre> {{this.movietitle}}
 					</pre>
-                        {{/if}}
-                        {{/each}}
+                        </div>
+                        <div class="col s4">
+
+                            <button class="delete pink accent-3 waves-effect waves-light btn btn-small" type="button"
+                                data-id="{{api_id}}">
+                                Delete
+                            </button>
+                        </div>
+                    </div>
+                    {{/if}}
+                    {{/each}}
                 </ul>
 
             </div>

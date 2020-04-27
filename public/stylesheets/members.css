@@ -1,6 +1,5 @@
 body {
-    background-image: url("../images/movie-background-2.jpg");
-    background-color: lightgray;
+    background-color: #3e424b;
 }
 .container {
     margin: 0 auto;
@@ -11,23 +10,31 @@ body {
     font-weight: bolder;
     margin: 0 auto;
     color: ghostwhite;
+    
+ 
 }
 #intro, #get-started {
     font-size: x-large;
     width:80%;
     text-align: center;
     margin: 0 auto;
-    font-weight: bolder;
+    font-weight: bold;
     color: ghostwhite;
+    border-style: solid;
+    border-color: gold;
+ 
 }
 #start {
     text-align: center;
     font-weight: bolder;
     margin: 0 auto 50px auto;
     color: ghostwhite;
+    
   
 }
 #search, #list {
     margin: 0 auto;
     text-align: center;
+    
+ 
 }
