@@ -16,9 +16,11 @@ body {
 h2 {
   color: white;
 }
-.row {
+
+.user-form {
+  margin: 0 auto 0 50px;
   border-style: solid;
-    border-color: gold;
- 
+  border-color: gold;
+  text-align: center;
 }
 
