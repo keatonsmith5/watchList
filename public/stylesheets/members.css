@@ -9,6 +9,7 @@ body {
     text-align: center;
     font-weight: bolder;
     margin: 0 auto;
+    background-color: lightgray;
 }
 #intro {
     font-size: x-large;
@@ -20,11 +21,13 @@ body {
     text-align: center;
     font-weight: bolder;
     margin: 0 auto 50px auto;
+  
 }
 #search, #list {
     margin: 0 auto;
     text-align: center;
 }
-/* .links-wrapper {
-    width:30%;
-} */
+.welcome-color {
+    background-color: #fffdd0;
+    
+}

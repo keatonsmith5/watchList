@@ -23,7 +23,7 @@ $(document).ready(function() {
     }).then(function(response) {
       // Creating a div to hold the movie
       // Retrieving the URL for the image
-      const searchResult = `<div class="row">
+      const searchResult = `<div class="row" id ="searched-movie">
       <div class="col xl6 s12">
       <h2 id="movie-title">${response.Title}</h2>
       <br>
@@ -86,7 +86,6 @@ $(document).ready(function() {
           type: "POST",
           data: watchedMovie
         }).then(() => {
-          alert("Disabling");
           $(this).attr("disabled", true);
           console.log(this);
         });

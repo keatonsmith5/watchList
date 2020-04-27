@@ -43,12 +43,10 @@ module.exports = function(app) {
           api_id: list.dataValues.api_id
         };
       });
-      // console.log(userMovieList);
-      // res.sendFile(path.join(__dirname, "../public/movielist.html"));
-      // res.json(userMovieList);
+
       res.render("index", {
-        style: "stylesheets/movielist.css",
-        userMovieList
+        userMovieList,
+        style: "stylesheets/movielist.css"
       });
     });
   });

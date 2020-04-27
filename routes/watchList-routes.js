@@ -42,7 +42,6 @@ module.exports = app => {
   });
 
   app.put("/api/watchlistitem/", (req, res) => {
-    // req.body: title, api_id, is_watched
     db.WatchListItem.update(
       { is_watched: true },
       {
@@ -55,13 +54,14 @@ module.exports = app => {
     });
   });
 
-  app.delete("/api/watchlistitem/:id", (req, res) => {
-    db.Post.destroy({
+  app.delete("/api/watchlistitem/", (req, res) => {
+    console.log(req.body.api_id);
+    db.WatchListItem.destroy({
       where: {
-        id: req.params.id
+        api_id: req.body.api_id
       }
-    }).then(dbWatch => {
-      res.json(dbWatch);
+    }).then(function(data) {
+      res.json(data);
     });
   });
 };
