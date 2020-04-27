@@ -27,11 +27,11 @@ $(document).ready(function() {
       <div class="col xl6 s12">
       <h2 id="movie-title">${response.Title}</h2>
       <br>
-      <button class="waves-effect waves-light btn unwatched">Add to Watch List</button>
+      <button class="waves-effect waves-light btn unwatched indigo accent-2">Add to Watch List</button>
       <br>
-      <button class="waves-effect waves-light btn watched">Already Watched</button>
+      <button class="waves-effect waves-light btn watched indigo accent-2">Already Watched</button>
       <br>
-      <button data-target="modal1" class="waves-effect waves-light btn modal-trigger modal-close">View Details</button>
+      <button data-target="modal1" class=" indigo accent-2 waves-effect waves-light btn modal-trigger modal-close">View Details</button>
       </div>
       <div class="col xl6 s12"><img src="${response.Poster}" alt="No Movie Poster Available" style:"height:50px;width:50px"></div>
     </div>

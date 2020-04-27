@@ -1,7 +1,5 @@
 body{
-    background-image: url("../images/movie-background-1.jpg");
-    background-size: 100% 100%;
-    background-color: lightgray;
+    background-color: #3e424b;
 }
 .btn {
     margin: 10px;
@@ -17,4 +15,12 @@ body{
 }
 #movie-title{
     font-weight: bolder;
+    color: ghostwhite;
+}
+#movie-form {
+    color: ghostwhite;
+}
+#searched-movie {
+    border: solid;
+    border-color: gold;
 }
