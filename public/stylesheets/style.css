@@ -4,13 +4,16 @@ form.login {
 }
 
 body {
+  background-image: url("../images/movie-background-2.jpg");
   background-color: gainsboro;
 }
 .container {
   font-size: medium;
   font-weight: bold;
-  color: black;
+  color: white;
+  
 }
-.gray-form {
-  background-color: #fffdd0;
+h2 {
+  color: white;
 }
+

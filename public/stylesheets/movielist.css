@@ -1,8 +1,10 @@
 body {
+    background-image: url("../images/movie-background-1.jpg");
+    background-size: 100% 100%;
     background-color: lightgray;
 }
 #my-watchlist, #already-watched {
-    background-color: #fffdd0;
+    
     font-size: large;
     font-weight: bold;
 }
@@ -10,9 +12,18 @@ button {
     margin: 10px;
 }
 .user-movie {
+    font-size:large;
     border-style: solid;
-    border-color: lightgray;
+    border-color: black;
  
    
 
+}
+.title {
+    color: ghostwhite;
+    font-weight: bolder;
+    font-size: 40px;
+}
+.container {
+    width: 60%;
 }
