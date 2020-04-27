@@ -1,6 +1,10 @@
 # Title: QuaranScreen
+
+  ## Link to Deployed Application
+  https://quaranscreen.herokuapp.com/
+
   ## Description
-  * web application that allows users to create and share a movie list with each other
+  * Web application that allows users to create and share a movie list with each other
     ## Table of Contents
     - [Installation](#Installation)
     - [Usage](#Usage)
