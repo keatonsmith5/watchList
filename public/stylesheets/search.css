@@ -1,4 +1,6 @@
 body{
+    background-image: url("../images/movie-background-1.jpg");
+    background-size: 100% 100%;
     background-color: lightgray;
 }
 .btn {
@@ -15,7 +17,4 @@ body{
 }
 #movie-title{
     font-weight: bolder;
-}
-#searched-movie {
-    background-color: #fffdd0;
 }
