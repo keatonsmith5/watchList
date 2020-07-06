@@ -24,6 +24,5 @@
     * In the future we would like to add features to rate, comment and add reviews. This would make the user experience more engaging, and have more content to share with your friends.
     ## Video guide:
     * Coming soon.
-    ## Github Profile Avatar
-    ![Profile Picture](https://avatars1.githubusercontent.com/u/61567409?v=4=250x)
+   
   
